@@ -10,7 +10,7 @@ if (!process.env.PORT) {
   process.exit(1);
 }
 
-const PORT: number = parseInt(process.env.PORT as string, 10);
+const PORT: number = parseInt(process.env.PORT as string, 10) || 4001;
 
 const app = express();
 
@@ -31,3 +31,5 @@ if (require.main === module) {
   });
 }
 
+
+export default app
