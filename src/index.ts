@@ -6,11 +6,11 @@ import { testController } from "./controllers/index.controller";
 
 dotenv.config();
 
-if (!process.env.PORT) {
+const PORT: number = parseInt(process.env.APP_PORT as string, 10) || 4001;
+
+if (!PORT) {
   process.exit(1);
 }
-
-const PORT: number = parseInt(process.env.PORT as string, 10) || 4001;
 
 const app = express();
 
